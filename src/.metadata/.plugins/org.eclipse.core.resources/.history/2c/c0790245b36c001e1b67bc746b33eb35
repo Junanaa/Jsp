@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<Form action="MyGame.jsp" name="LoginForm" method="post">
+ 	<p> 로그인
+	<p> 이름 : <input type="text" name="mName" value="wondo" size="10">
+	<p> 전화번호 : <input type="text"name="mPho" value="01099811072" size="11">
+
+	<p>  <input type="submit">
+ </Form>
+</body>
+</html>

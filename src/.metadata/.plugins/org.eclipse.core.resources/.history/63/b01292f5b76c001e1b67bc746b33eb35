@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+request.setCharacterEncoding("UTF-8"); //한글 표시용
+//넘어온값저장
+String sName = request.getParameter("mName");
+
+
+
+
+if(sName == null){
+	sName = "잘못된 접근입니다.";
+}
+String sPw = request.getParameter("pw1");
+String sPw2 = request.getParameter("pw2");
+
+<%
+if(sPw == sPw2 ){
+	mPw = 입력한 비번 2개가 동일합니다.
+}
+else{
+	입력한 비번 2개가 다릅니다.
+}
+if (nUser == 1) {
+    userChoiceText = "가위";
+} else if (nUser == 2) {
+    userChoiceText = "바위";
+} else if (nUser == 3) {
+    userChoiceText = "보";
+}
+
+
+%>
+	
+
+%>
+	회원 입력결과<br>
+	이름: <%=sName%><br>
+	비번 : <%=sPw %><br>
+	
+
+</body>
+</html>

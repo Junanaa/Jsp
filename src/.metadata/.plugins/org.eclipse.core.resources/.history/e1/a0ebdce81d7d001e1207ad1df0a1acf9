@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*' %>
+<%@ page import ="java.sql.DriverManager' %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+회원입력결과<br><br>
+
+<%
+
+	request.setCharacterEncoding("UTF-8"); //한글 표시용
+
+
+	String sID = request.getParameter("mID");
+	String sPWD1 = request.getParameter("mPWD1");
+	String sPWD2 = request.getParameter("mPWD2");
+	String sName = request.getParameter("mName");
+	String sPhone = request.getParameter("mPhone");
+	String sNumber = request.getParameter("mNumber");
+	String sYMD = request.getParameter("mYMD");
+
+
+%>
+
+			아이디:<%=sID%><br><br>
+			비밀번호 :<%=sPWD1%><br><br>
+			비밀확인 :<%=sPWD2%><br><br>
+			이름: <%=sName%><br><br>
+			핸드폰:<%=sPhone %><br><br>
+			생년월일:<%=sYMD %><br><br>
+			
+<%
+	Connection MyConn = null;
+	try{
+		String sUrl = "jdbc:mysql://localhost:3306/mydatabase";
+		String sUser = "root";
+		String sPassword = "1234";
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		MyConn = DriverManager.getConnection(sUrl, sUrl, sPassword);
+		
+		out.println("DB접속 성공.");
+		
+	}
+	catch (SQLException ex){
+		out.println("DB 접속실패.<br>");
+		out.println("SQLException: " + ex.getMessage());
+		ex.printStackTrace();
+		
+	}
+	finally{
+		
+		if(MyConn != null) MyConn.close();
+		out.println("DB접속 해제");
+	}
+%>
+	      
+	     
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<Form action="ResNCalcu.jsp" name="calform" method="post">
+ 	<p> 회원입력
+	<p> 아이디 : <input type="text" name="mName" value="wondo" size="10">
+	<p> 핸드폰 : <input type="text"name="mPho" value="01099811072" size="11">
+	<p> 생년월일 : <input type="text"name="mbr" value="YYYYMMDD" size="8">
+	<p> 취미 :   붉은색 : <input type="radio" name="color" value="red">
+                검은색 : <input type="radio" name="color" value="black">
+                파란색 : <input type="radio" name="color" value="blue">
+	<p>  <input type="submit">
+ </Form>
+</body>
+</html>

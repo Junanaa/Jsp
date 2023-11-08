@@ -1,0 +1,10 @@
+CREATE TABLE `mydatabase`.`tbl_bbsinfo` (
+  `nSeq` INT NOT NULL AUTO_INCREMENT,
+  `vTitle` VARCHAR(10) NULL,
+  `vContent` VARCHAR(500) NULL,
+  `vID` VARCHAR(20) NULL,
+  `nView` INT NULL DEFAULT 0,
+  `cSecret` CHAR(1) NULL,
+  `nNotice` INT NULL DEFAULT 0,
+  `dRegdate` DATETIME NULL,
+  PRIMARY KEY (`nSeq`));

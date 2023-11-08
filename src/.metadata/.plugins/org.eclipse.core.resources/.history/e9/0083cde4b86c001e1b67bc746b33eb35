@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+request.setCharacterEncoding("UTF-8"); //한글 표시용
+//넘어온값저장
+String sName = request.getParameter("mName");
+
+
+
+
+if(sName == null){
+	sName = "잘못된 접근입니다.";
+}
+String sPw = request.getParameter("pw1");
+String sPw2 = request.getParameter("pw2");
+
+%>
+<%
+function getCheckboxValue()  {
+
+    const query = 'input[name="ho"]:checked';
+
+    const selectedEls = document.querySelectorAll(query);
+
+   
+
+    let result = '';
+
+    selectedEls.forEach((el) => {
+
+      result += el.value + ' ';
+
+    });
+
+    
+
+    // 출력
+
+    document.getElementById('result').innerText
+
+      = result;
+
+  }
+
+%>
+	
+
+	회원 입력결과<br>
+	이름: <%=sName%><br>
+	비번 : <%=sPw %><br>
+	
+
+</body>
+</html>

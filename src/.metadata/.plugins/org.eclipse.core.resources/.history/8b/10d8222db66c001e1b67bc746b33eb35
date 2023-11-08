@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+request.setCharacterEncoding("UTF-8"); //한글 표시용
+//넘어온값저장
+String sName = request.getParameter("mName");
+
+
+
+
+if(sName == null){
+	sName = "잘못된 접근입니다.";
+}
+String sPw = request.getParameter("pw1");
+
+if(document.getElementById('pw').value !='' && document.getElementById('pw2').value!=''){
+    if(document.getElementById('pw').value==document.getElementById('pw2').value){
+        document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+        document.getElementById('check').style.color='blue';
+    }
+    else{
+        document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+        document.getElementById('check').style.color='red';
+
+%>
+	회원 입력결과<br>
+	이름: <%=sName%><br>
+	비밀번호 : <%=sPw %><br>
+
+	
+</body>
+</html>
